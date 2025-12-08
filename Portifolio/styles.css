@@ -1,0 +1,449 @@
+/* 
+     RESET SIMPLES 
+    Remove margens/paddings padrões e define box-sizing.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*  ESTILOS GERAIS  */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0f172a; /* fundo escuro */
+    color: #e5e7eb; /* texto claro */
+    line-height: 1.6;
+}
+
+/* container centralizado com largura maxima */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* botoes padrao */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    border: none;
+    background-color: #2563eb;
+    color: #f9fafb;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 15px rgba(15, 23, 42, 0.7);
+}
+
+/* variaçao de botao com borda */
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid #60a5fa;
+}
+
+.btn-outline:hover {
+    background-color: #1e293b;
+}
+
+/*  HEADER / MENU  */
+
+.header {
+    position: fixed; /* deixa o header fixo no topo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #1f2937;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* navegaçao padrao (desktop) */
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #e5e7eb;
+    font-size: 0.95rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.nav a:hover {
+    color: #93c5fd;
+}
+
+/* link ativo da seçao atual */
+.nav a.active {
+    border-color: #3b82f6;
+}
+
+/* botao de menu mobile */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* barrinhas do menu hamburger */
+.menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: #e5e7eb;
+    margin: 4px 0;
+    transition: transform 0.2s ease;
+}
+
+/*  SEÇOES  */
+
+.secao {
+    padding: 6rem 0 4rem; /* espaço para compensar o header fixo */
+}
+
+/* titulos das seçoes */
+.secao h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+/*  INICIO  */
+
+.secao-inicio {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.inicio-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.inicio-texto h1 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+}
+
+.inicio-texto h1 span {
+    color: #60a5fa;
+}
+
+.inicio-texto p {
+    margin-bottom: 1.5rem;
+    max-width: 32rem;
+}
+
+.botoes-inicio {
+    display: flex;
+    gap: 1rem;
+}
+
+/* area da foto*/
+.inicio-foto {
+    display: flex;
+    justify-content: center;
+}
+
+.inicio-foto img {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 999px;
+    border: 3px solid #1d4ed8;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.9);
+}
+
+/* SOBRE  */
+
+.secao-sobre {
+    background-color: #020617;
+}
+
+.sobre-grid {
+    display: grid;
+    grid-template-columns: 1.7fr 1.3fr;
+    gap: 2rem;
+}
+
+.sobre-info h3 {
+    margin: 1rem 0 0.5rem;
+}
+
+.sobre-info ul {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.sobre-info li {
+    margin-bottom: 0.35rem;
+}
+
+/* lista das habilidades */
+.habilidades {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.habilidades li {
+    background-color: #0f172a;
+    border-radius: 999px;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.85rem;
+    border: 1px solid #1e40af;
+}
+
+/*  SEÇAO PROJETOS  */
+
+.secao-projetos {
+    background-color: #020617;
+}
+
+.filtro-projetos {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+/* botões do filtro de projetos */
+.btn-filtro {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+}
+
+.btn-filtro.active {
+    background-color: #1d4ed8;
+}
+
+/* grid de cards dos projetos */
+.grid-projetos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+/* card individual do projeto */
+.projeto-card {
+    background-color: #020617;
+    border-radius: 1rem;
+    padding: 1.25rem;
+    border: 1px solid #1f2937;
+    box-shadow: 0 16px 30px rgba(15, 23, 42, 0.6);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.projeto-card:hover {
+    transform: translateY(-3px);
+    border-color: #1d4ed8;
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.8);
+}
+
+.projeto-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.projeto-card p {
+    font-size: 0.95rem;
+}
+
+.tag-projeto {
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+    color: #93c5fd;
+}
+
+.link-projeto {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: #60a5fa;
+}
+
+.link-projeto:hover {
+    text-decoration: underline;
+}
+
+/* classe usada pra esconder cards de projetos pelo JS */
+.projeto-card.hidden {
+    display: none;
+}
+
+/*  SEÇAO CONTATO  */
+
+.secao-contato {
+    background-color: #020617;
+}
+
+.form-contato {
+    max-width: 500px;
+    margin-top: 1rem;
+}
+
+.grupo-input {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-input label {
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+}
+
+.grupo-input input,
+.grupo-input textarea {
+    padding: 0.6rem 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid #1f2937;
+    background-color: #0b1120;
+    color: #e5e7eb;
+    font-size: 0.95rem;
+}
+
+.grupo-input input:focus,
+.grupo-input textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+/* mensagem de erro por campo */
+.erro-msg {
+    font-size: 0.8rem;
+    color: #f97373;
+    min-height: 1rem;
+    margin-top: 0.1rem;
+}
+
+/* estilo para inputs com erro de validaçao */
+.grupo-input.invalido input,
+.grupo-input.invalido textarea {
+    border-color: #f97373;
+}
+
+/* mensagem de retorno geral do formulario */
+.mensagem-retorno {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+}
+
+/* ====== RODAPÉ ====== */
+
+.footer {
+    border-top: 1px solid #1f2937;
+    padding: 1.5rem 0;
+    background-color: #020617;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.links-footer a {
+    color: #93c5fd;
+    text-decoration: none;
+    margin-left: 1rem;
+    font-size: 0.85rem;
+}
+
+.links-footer a:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVIDADE*/
+
+@media (max-width: 768px) {
+    .inicio-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .inicio-texto p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .botoes-inicio {
+        justify-content: center;
+    }
+
+    .inicio-foto {
+        order: -1; /* foto acima do texto no mobile */
+    }
+
+    .sobre-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-projetos {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    /* mostra o botão hamburger e esconde o menu horizontal */
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background-color: #020617;
+        display: none;
+    }
+
+    .nav.open {
+        display: block;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        padding: 0.75rem 1rem 1rem;
+    }
+
+    .nav li {
+        margin-bottom: 0.5rem;
+    }
+}
