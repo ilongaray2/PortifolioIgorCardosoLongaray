@@ -8,8 +8,10 @@ menuToggle.addEventListener('click', function () {
     // alterna a classe open para mostrar/ocultar o menu no mobile, achei bonitinho
     navMenu.classList.toggle('open');
 });
+
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav-link');
+
 // funçao que verifica qual seçao está visivel e marca o link respectivo
 function marcarLinkAtivo() {
     let indexAtivo = sections.length;
@@ -20,8 +22,10 @@ function marcarLinkAtivo() {
     navLinks.forEach(link => link.classList.remove('active'));
     navLinks[indexAtivo].classList.add('active');
 }
+
 // chama a função no scroll
 window.addEventListener('scroll', marcarLinkAtivo);
+
 //  SCROLL SUAVE  
 navLinks.forEach(link => {
     link.addEventListener('click', function (event) {
@@ -46,6 +50,7 @@ navLinks.forEach(link => {
 // FILTRO DOS PROJETOS 
 const botoesFiltro = document.querySelectorAll('.btn-filtro');
 const cardsProjetos = document.querySelectorAll('.projeto-card');
+
 botoesFiltro.forEach(botao => {
     botao.addEventListener('click', function () {
         // remove a classe active dos outros botoes
@@ -71,6 +76,7 @@ botoesFiltro.forEach(botao => {
 //  VALIDAÇAO DO FORMULARIO DE CONTATO  
 const formContato = document.getElementById('contatoForm');
 const mensagemRetorno = document.getElementById('mensagemRetorno');
+
 // funçao simples para validar e-mail
 function emailValido(email) {
     // expressao regular simples para validar formato de email
@@ -98,6 +104,7 @@ formContato.addEventListener('submit', function (event) {
             spanErro.textContent = '';
         }
     });
+
     // validaçao do nome
     if (campoNome.value.trim().length < 3) {
         const grupo = campoNome.closest('.grupo-input');
@@ -146,12 +153,19 @@ if (anoSpan) {
     anoSpan.textContent = new Date().getFullYear();
 }
 
-//  alternar tema claro/escuro 
+//  ALTERNAR TEMA CLARO/ESCURO 
+
 const body = document.body;
 const themeToggleBtn = document.getElementById('themeToggle');
 
 // recuperar preferência salva 
-const storedTheme = localStorage.getItem('theme');
+let storedTheme = localStorage.getItem('theme');
+
+// se nunca escolheu tema antes, padrão = dark
+if (!storedTheme) {
+    storedTheme = 'dark';
+    localStorage.setItem('theme', 'dark');
+}
 
 if (storedTheme === 'dark') {
     body.classList.add('dark-theme');
