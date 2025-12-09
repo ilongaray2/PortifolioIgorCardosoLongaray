@@ -145,3 +145,39 @@ const anoSpan = document.getElementById('anoAtual');
 if (anoSpan) {
     anoSpan.textContent = new Date().getFullYear();
 }
+
+//  alternar tema claro/escuro 
+const body = document.body;
+const themeToggleBtn = document.getElementById('themeToggle');
+
+// recuperar preferência salva 
+const storedTheme = localStorage.getItem('theme');
+
+if (storedTheme === 'dark') {
+    body.classList.add('dark-theme');
+    if (themeToggleBtn) {
+        themeToggleBtn.textContent = '☀️';
+        themeToggleBtn.setAttribute('aria-label', 'Alternar tema para claro');
+    }
+} else {
+    if (themeToggleBtn) {
+        themeToggleBtn.textContent = '🌙';
+        themeToggleBtn.setAttribute('aria-label', 'Alternar tema para escuro');
+    }
+}
+
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+        const isDark = body.classList.toggle('dark-theme');
+
+        if (isDark) {
+            localStorage.setItem('theme', 'dark');
+            themeToggleBtn.textContent = '☀️';
+            themeToggleBtn.setAttribute('aria-label', 'Alternar tema para claro');
+        } else {
+            localStorage.setItem('theme', 'light');
+            themeToggleBtn.textContent = '🌙';
+            themeToggleBtn.setAttribute('aria-label', 'Alternar tema para escuro');
+        }
+    });
+}

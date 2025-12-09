@@ -11,29 +11,35 @@
 <body>
     <!-- HEADER FIXO -->
     <header class="header">
-        <div class="container header-content">
-            <!-- logo/assinatura do site -->
-            <div class="logo">Ígor Cardoso Longaray</div>
+    <div class="container header-content">
+        <!-- logo/assinatura do site -->
+        <div class="logo">Ígor Cardoso Longaray</div>
 
-            <!-- botao "hamburger" pro mobile -->
-            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
-                <!-- tracinhos  -->
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <!-- Menu -->
-            <nav class="nav" id="navMenu">
-                <ul>
-                    <li><a href="#inicio" class="nav-link active">Início</a></li>
-                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
-                    <li><a href="#formacao" class="nav-link">Formação</a></li>
-                    <li><a href="#projetos" class="nav-link">Projetos</a></li>
-                    <li><a href="#contato" class="nav-link">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+        <!-- botão de tema -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema para escuro/claro">
+            🌙
+        </button>
+
+        <!-- botao "hamburger" pro mobile -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+            <!-- tracinhos  -->
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Menu -->
+        <nav class="nav" id="navMenu">
+            <ul>
+                <li><a href="#inicio" class="nav-link active">Início</a></li>
+                <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="#formacao" class="nav-link">Formação</a></li>
+                <li><a href="#projetos" class="nav-link">Projetos</a></li>
+                <li><a href="#contato" class="nav-link">Contato</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
     <!-- inicio -->
     <section id="inicio" class="secao secao-inicio">
         <div class="container inicio-content">
@@ -89,33 +95,38 @@
             </div>
         </div>
     </section>
- <!-- Formaçao-->
-    <section id="formacao" class="secao secao-formacao">
-        <div class="container">
-            <h2>Formação</h2>
-                <div class="formacao-info">
-                    <ul>
-                        <li><strong>Ensino médio:</strong> Colégio Dom Feliciano 2013</li>
-                        <li><strong>Técnico em Informática:</strong> Colégio protário Alves 2020</li>
-                        <li><strong>Ensino Superior:</strong> Ciência de Dados / UNINTER 2026</li>
-                        <li><strong>Área de interesse:</strong> Dados, Automação, BigData</li>
-                    </ul>
-
-                    <h3>Habilidades</h3>
-                    <!-- Lista simples de habilidades técnicas -->
-                    <ul class="habilidades">
-                        <li>Inglês Avançado</li>
-                        <li>Excel</li>
-                        <li>Python / PySpark</li>
-                        <li>SQL  / Análise de Dados</li>
-                        <li>Power BI &amp; Modelagem de Dados</li>
-                        <li>Git &amp; GitHub</li>
-                        <li>Estatística</li>
-                    </ul>
-                </div>
+<!-- FORMAÇAO-->
+<section id="formacao" class="secao secao-formacao">
+    <div class="container">
+        <h2>Formação</h2>
+        <div class="formacao-info">
+            
+            <div class="col-formacao">
+                <ul>
+                    <li><strong>Ensino médio:</strong> Colégio Dom Feliciano 2013</li>
+                    <li><strong>Técnico em Informática:</strong> Colégio protário Alves 2020</li>
+                    <li><strong>Ensino Superior:</strong> Ciência de Dados / UNINTER 2026</li>
+                    <li><strong>Área de interesse:</strong> Dados, Automação, BigData</li>
+                </ul>
             </div>
+
+            <div class="col-habilidades">
+                <h3>Habilidades</h3>
+                <!-- Lista simples de habilidades técnicas -->
+                <ul class="habilidades">
+                    <li>Inglês Avançado</li>
+                    <li>Excel</li>
+                    <li>Python / PySpark</li>
+                    <li>SQL  / Análise de Dados</li>
+                    <li>Power BI &amp; Modelagem de Dados</li>
+                    <li>Git &amp; GitHub</li>
+                    <li>Estatística</li>
+                </ul>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
     <!-- PROJETOS -->
     <section id="projetos" class="secao secao-projetos">
         <div class="container">

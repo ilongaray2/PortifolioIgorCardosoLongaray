@@ -8,12 +8,89 @@
     box-sizing: border-box;
 }
 
+
+/*        VARIÁVEIS DE TEMA        */
+
+:root {
+    /* Tema CLARO (padrão quando NÃO tem body.dark-theme) */
+    --bg-body: #f3f4f6;
+    --text-color: #111827;
+
+    --header-bg: rgba(255, 255, 255, 0.9);
+    --header-border: #e5e7eb;
+
+    --nav-link: #111827;
+    --nav-link-hover: #1d4ed8;
+    --nav-link-active-border: #2563eb;
+
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --btn-text: #f9fafb;
+
+    --section-alt-bg: #ffffff;
+
+    --card-bg: #ffffff;
+    --card-border: #e5e7eb;
+
+    --footer-bg: #111827;
+    --footer-border: #1f2937;
+
+    --input-bg: #ffffff;
+    --input-border: #d1d5db;
+    --input-border-focus: #2563eb;
+
+    --pill-bg: #e5e7eb;
+    --pill-border: #2563eb;
+
+    --link: #2563eb;
+    --link-hover: #1d4ed8;
+
+    --error: #b91c1c;
+}
+
+/* Tema ESCURO (quando body.dark-theme é adicionado pelo JS) */
+body.dark-theme {
+    --bg-body: #0f172a;
+    --text-color: #e5e7eb;
+
+    --header-bg: rgba(15, 23, 42, 0.95);
+    --header-border: #1f2937;
+
+    --nav-link: #e5e7eb;
+    --nav-link-hover: #93c5fd;
+    --nav-link-active-border: #3b82f6;
+
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --btn-text: #f9fafb;
+
+    --section-alt-bg: #020617;
+
+    --card-bg: #020617;
+    --card-border: #1f2937;
+
+    --footer-bg: #020617;
+    --footer-border: #1f2937;
+
+    --input-bg: #0b1120;
+    --input-border: #1f2937;
+    --input-border-focus: #2563eb;
+
+    --pill-bg: #0f172a;
+    --pill-border: #1e40af;
+
+    --link: #60a5fa;
+    --link-hover: #93c5fd;
+
+    --error: #f97373;
+}
+
 /*  ESTILOS GERAIS  */
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #0f172a; /* fundo escuro */
-    color: #e5e7eb; /* texto claro */
+    background-color: var(--bg-body);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
@@ -30,8 +107,8 @@ body {
     padding: 0.75rem 1.5rem;
     border-radius: 999px;
     border: none;
-    background-color: #2563eb;
-    color: #f9fafb;
+    background-color: var(--primary);
+    color: var(--btn-text);
     text-decoration: none;
     font-weight: bold;
     transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
@@ -39,7 +116,7 @@ body {
 }
 
 .btn:hover {
-    background-color: #1d4ed8;
+    background-color: var(--primary-hover);
     transform: translateY(-1px);
     box-shadow: 0 8px 15px rgba(15, 23, 42, 0.7);
 }
@@ -50,7 +127,7 @@ body {
     border: 1px solid #60a5fa;
 }
 
-.btn-outline:hover {
+body.dark-theme .btn-outline:hover {
     background-color: #1e293b;
 }
 
@@ -61,9 +138,9 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(15, 23, 42, 0.95);
+    background-color: var(--header-bg);
     backdrop-filter: blur(8px);
-    border-bottom: 1px solid #1f2937;
+    border-bottom: 1px solid var(--header-border);
     z-index: 1000;
 }
 
@@ -80,6 +157,28 @@ body {
     letter-spacing: 1px;
 }
 
+/* Botão de tema claro/escuro */
+.theme-toggle {
+    margin-left: auto;
+    margin-right: 1rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid var(--header-border);
+    background: var(--card-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: background 0.2s ease, transform 0.1s ease, border-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-1px);
+    border-color: var(--primary);
+}
+
 /* navegaçao padrao (desktop) */
 .nav ul {
     list-style: none;
@@ -89,7 +188,7 @@ body {
 
 .nav a {
     text-decoration: none;
-    color: #e5e7eb;
+    color: var(--nav-link);
     font-size: 0.95rem;
     padding-bottom: 0.25rem;
     border-bottom: 2px solid transparent;
@@ -97,12 +196,12 @@ body {
 }
 
 .nav a:hover {
-    color: #93c5fd;
+    color: var(--nav-link-hover);
 }
 
 /* link ativo da seçao atual */
 .nav a.active {
-    border-color: #3b82f6;
+    border-color: var(--nav-link-active-border);
 }
 
 /* botao de menu mobile */
@@ -118,7 +217,7 @@ body {
     display: block;
     width: 22px;
     height: 2px;
-    background-color: #e5e7eb;
+    background-color: var(--nav-link);
     margin: 4px 0;
     transition: transform 0.2s ease;
 }
@@ -188,7 +287,7 @@ body {
 /* SOBRE  */
 
 .secao-sobre {
-    background-color: #020617;
+    background-color: var(--section-alt-bg);
 }
 
 .sobre-grid {
@@ -218,17 +317,42 @@ body {
 }
 
 .habilidades li {
-    background-color: #0f172a;
+    background-color: var(--pill-bg);
     border-radius: 999px;
-    padding: 0.35rem 0.rem;
+    padding: 0.35rem 0.75rem;
     font-size: 0.85rem;
-    border: 1px solid #1e40af;
+    border: 1px solid var(--pill-border);
 }
+
+/*  FORMAÇÃO  */
+/* Mesma base de fundo das outras seções escuras (Sobre/Projetos/Contato) */
+.secao-formacao {
+    background-color: var(--section-alt-bg);
+}
+
+.formacao-info ul {
+    list-style: none;      /* remove as bolinhas */
+    padding-left: 0;       /* tira recuo da esquerda */
+    margin-left: 0;
+}
+
+.formacao-info {
+    display: grid;
+    grid-template-columns: 1.2fr 1.5fr; /* esquerda formação / direita habilidades */
+    gap: 2rem;
+    align-items: start;
+}
+
+.col-habilidades h3 {
+    margin-top: -1.0rem;   /* levanta para cima */
+    margin-bottom: 0.5rem;
+}
+
 
 /*  SEÇAO PROJETOS  */
 
 .secao-projetos {
-    background-color: #020617;
+    background-color: var(--section-alt-bg);
 }
 
 .filtro-projetos {
@@ -238,14 +362,14 @@ body {
     gap: 0.75rem;
 }
 
-/* botões do filtro de projetos */
+/* botoes do filtro de projetos */
 .btn-filtro {
     font-size: 0.85rem;
     padding: 0.5rem 1rem;
 }
 
 .btn-filtro.active {
-    background-color: #1d4ed8;
+    background-color: var(--primary-hover);
 }
 
 /* grid de cards dos projetos */
@@ -257,17 +381,25 @@ body {
 
 /* card individual do projeto */
 .projeto-card {
-    background-color: #020617;
+    background-color: var(--card-bg);
     border-radius: 1rem;
     padding: 1.25rem;
-    border: 1px solid #1f2937;
-    box-shadow: 0 16px 30px rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 16px 30px rgba(15, 23, 42, 0.15);
     transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+body.dark-theme .projeto-card {
+    box-shadow: 0 16px 30px rgba(15, 23, 42, 0.6);
 }
 
 .projeto-card:hover {
     transform: translateY(-3px);
     border-color: #1d4ed8;
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.3);
+}
+
+body.dark-theme .projeto-card:hover {
     box-shadow: 0 20px 45px rgba(15, 23, 42, 0.8);
 }
 
@@ -290,7 +422,7 @@ body {
     margin-top: 0.5rem;
     font-size: 0.85rem;
     text-decoration: none;
-    color: #60a5fa;
+    color: var(--link);
 }
 
 .link-projeto:hover {
@@ -305,7 +437,7 @@ body {
 /*  SEÇAO CONTATO  */
 
 .secao-contato {
-    background-color: #020617;
+    background-color: var(--section-alt-bg);
 }
 
 .form-contato {
@@ -328,22 +460,22 @@ body {
 .grupo-input textarea {
     padding: 0.6rem 0.75rem;
     border-radius: 0.5rem;
-    border: 1px solid #1f2937;
-    background-color: #0b1120;
-    color: #e5e7eb;
+    border: 1px solid var(--input-border);
+    background-color: var(--input-bg);
+    color: var(--text-color);
     font-size: 0.95rem;
 }
 
 .grupo-input input:focus,
 .grupo-input textarea:focus {
     outline: none;
-    border-color: #2563eb;
+    border-color: var(--input-border-focus);
 }
 
 /* mensagem de erro por campo */
 .erro-msg {
     font-size: 0.8rem;
-    color: #f97373;
+    color: var(--error);
     min-height: 1rem;
     margin-top: 0.1rem;
 }
@@ -351,7 +483,7 @@ body {
 /* estilo para inputs com erro de validaçao */
 .grupo-input.invalido input,
 .grupo-input.invalido textarea {
-    border-color: #f97373;
+    border-color: var(--error);
 }
 
 /* mensagem de retorno geral do formulario */
@@ -360,12 +492,13 @@ body {
     font-size: 0.95rem;
 }
 
-/* ====== RODAPÉ ====== */
+/*  RODAPÉ  */
 
 .footer {
-    border-top: 1px solid #1f2937;
+    border-top: 1px solid var(--footer-border);
     padding: 1.5rem 0;
-    background-color: #020617;
+    background-color: var(--footer-bg);
+    color: #e5e7eb;
 }
 
 .footer-content {
@@ -430,7 +563,7 @@ body {
         top: 100%;
         right: 0;
         width: 100%;
-        background-color: #020617;
+        background-color: var(--section-alt-bg);
         display: none;
     }
 
@@ -445,5 +578,10 @@ body {
 
     .nav li {
         margin-bottom: 0.5rem;
+    }
+
+    .theme-toggle {
+        order: 2;
+        margin-right: 0.5rem;
     }
 }
