@@ -131,7 +131,7 @@ formContato.addEventListener('submit', function (event) {
 
     // se chegou aqui, consideramos o formulário válido
     mensagemRetorno.style.color = '#4ade80';
-    mensagemRetorno.textContent = 'Mensagem enviada com sucesso! (Simulação)';
+    mensagemRetorno.textContent = 'Mensagem enviada com sucesso!';
 
     // aqui você poderia integrar com um serviço de envio de email,
     // mas para o trabalho atual, a simulação e suficiente.

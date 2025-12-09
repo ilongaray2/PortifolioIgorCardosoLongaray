@@ -126,6 +126,7 @@
                 <button class="btn btn-filtro active" data-filter="todos">Todos</button>
                 <button class="btn btn-filtro" data-filter="web">Web</button>
                 <button class="btn btn-filtro" data-filter="dados">Dados</button>
+                <button class="btn btn-filtro" data-filter="automação">Automação</button>
             </div>
 
             <div class="grid-projetos">
@@ -141,38 +142,33 @@
                 </article>
 
                 <article class="projeto-card" data-category="dados">
-                    <h3>Análise preditiva de sinistro</h3>
+                    <h3>Classificador De Nota Fiscal Eletronica</h3>
                     <p>
                         Análise preditiva de sinistro com base nos alertas gerados pelos motoristas durante a viagem.
                     </p>
                     <p>
-                        Nessa pasta consta os arquivos jupyter que utilizava em 2019-2021 para atualizar o modelo e verificar em tempo real uma SMP (numero da viagem) a probabilidade da viagem ser um sisnitro (BACAJupyter.ipynb).
+                        Nessa pasta consta os arquivos jupyter que utilizava em 2019-2021 na APISUL para atualizar o modelo, complementar o modelo e verificar em tempo real se uma SMP (numero da viagem) a probabilidade da viagem ser um sisnitro (BACAJupyter.ipynb).
                     </p>
                     <p class="tag-projeto">Dados</p>
-                    <a href="#" target="_blank" class="link-projeto">
+                    <a href="https://github.com/ilongaray2/PortifolioIgorCardosoLongaray/tree/main/JupyterApisul" target="_blank" class="link-projeto">
                         Ver repositório
                     </a>
                 </article>
 
-                <article class="projeto-card" data-category="web">
-                    <h3>Sistema de Tarefas</h3>
+                <article class="projeto-card" data-category="automação">
+                    <h3>Classificador De Nota Fiscal Eletronica</h3>
                     <p>
-                        Aplicação simples de gerenciamento de tarefas com JavaScript puro.
+                        Script em python que utiliza visão computacional com OpenCV para detectar o tipo de Nota Fiscal Eletrônica.
                     </p>
-                    <p class="tag-projeto">Web</p>
+                    <p>
+                        Scrypt foca uma região do arquivo NFe utilizando visão computacional para pegar o boolean do tipo de nota, Entrada = 0 / Saída = 1.
+                    </p>
+                    <p>
+                        Com isso ele retorna um json contendo as informações do arquivo lido e se é uma NFe de Venda ou de Compra.
+                    </p>
+                    <p class="tag-projeto">Automação</p>
                     <a href="#" target="_blank" class="link-projeto">
                         Ver projeto
-                    </a>
-                </article>
-
-                <article class="projeto-card" data-category="dados">
-                    <h3>Modelo de Previsão</h3>
-                    <p>
-                        Projeto de ciência de dados para prever demanda de produtos.
-                    </p>
-                    <p class="tag-projeto">Dados</p>
-                    <a href="#" target="_blank" class="link-projeto">
-                        Ver repositório
                     </a>
                 </article>
             </div>
